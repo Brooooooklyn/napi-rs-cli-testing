@@ -1,0 +1,48 @@
+{
+  "name": "@napi-rs/cli-testing",
+  "version": "1.0.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 6.14.2 < 7 || >= 8.11.2 < 9 || >= 9.11.0 < 10 || >= 10.0.0"
+  },
+  "type": "commonjs",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "napi": {
+    "binaryName": "cli",
+    "targets": [
+      "aarch64-linux-android",
+      "aarch64-unknown-linux-gnu",
+      "aarch64-unknown-linux-musl",
+      "aarch64-pc-windows-msvc",
+      "x86_64-pc-windows-msvc",
+      "x86_64-unknown-linux-gnu",
+      "x86_64-unknown-linux-musl",
+      "x86_64-unknown-freebsd",
+      "i686-pc-windows-msvc",
+      "armv7-unknown-linux-gnueabihf",
+      "armv7-linux-androideabi",
+      "universal-apple-darwin",
+      "riscv64gc-unknown-linux-gnu",
+      "wasm32-wasi-preview1-threads"
+    ]
+  },
+  "scripts": {
+    "test": "ava",
+    "build": "napi build --release --platform --strip",
+    "build:debug": "napi build",
+    "prepublishOnly": "napi prepublish -t npm",
+    "artifacts": "napi artifacts",
+    "version": "napi version"
+  },
+  "ava": {
+    "timeout": "1m"
+  },
+  "devDependencies": {
+    "@emnapi/core": "^0.44.0",
+    "@emnapi/runtime": "^0.44.0",
+    "@napi-rs/cli": "^3.0.0-alpha.23",
+    "ava": "^6.0.1"
+  },
+  "packageManager": "yarn@4.0.2"
+}
